@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "amazon Product Recommender",
+    "version": "1.0",
+    "description": "Displays related products from a third-party API on Flipkart product pages.",
+    "permissions": [
+      "activeTab",
+      "storage"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://www.flipkart.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/favicon-16x16.png",
+        "48": "images/favicon-32x32.png",
+        "128": "images/favicon-32x32.png"
+      }
+    },
+    "icons": {
+      "16": "images/favicon-16x16.png",
+      "48": "images/favicon-32x32.png",
+      "128": "images/favicon-32x32.png"
+    },
+    "host_permissions": [
+      "https://realtime.oxylabs.io/*" 
+    ]
+    
+  }
+  
